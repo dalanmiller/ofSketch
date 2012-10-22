@@ -1,21 +1,25 @@
 #include "testApp.h"
 
-
 //--------------------------------------------------------------
 void testApp::setup(){
-    ofSetFrameRate(30);
-
+    ofEnableSmoothing(); //smooth edges
+    ofSetFrameRate(60); //fixed framerate
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    for(int i = 0; i < sizeof( particles) / sizeof( particles[0] ); i++){
+        particles[i].update();
+    }
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    //this is where the magic happens
-	particle.draw();
+    ofBackground(ofColor::black);
+
+    for(int i = 0; i < sizeof( particles) / sizeof( particles[0] ); i++){
+        particles[i].display();
+    }
 }
 
 //--------------------------------------------------------------
@@ -59,6 +63,6 @@ void testApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void testApp::dragEvent(ofDragInfo dragInfo){
 
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ball.h"
 #include "particle.h"
 
 class testApp : public ofBaseApp{
@@ -19,7 +20,10 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
-        //single instance of object
-        Particle particle;
+
+		//single test particle
+        //Particle testParticle;
+
+        //particle array
+        Particle particles[1000];
 };

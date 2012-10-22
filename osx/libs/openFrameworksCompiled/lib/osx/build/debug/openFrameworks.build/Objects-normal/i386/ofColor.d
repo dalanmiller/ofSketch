@@ -1,11 +1,11 @@
 dependencies: \
-  /Users/steveminor/Desktop/of_v0072_osx_release/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofColor.cpp \
+  /Users/steveminor/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofColor.cpp \
   ../../../../libs/openFrameworks/types/ofColor.h \
-  /Users/steveminor/Desktop/of_v0072_osx_release/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.h \
-  /Users/steveminor/Desktop/of_v0072_osx_release/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
-  /Users/steveminor/Desktop/of_v0072_osx_release/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
+  /Users/steveminor/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.h \
+  /Users/steveminor/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
+  /Users/steveminor/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
   ../../../../libs/openFrameworks/math/ofVec2f.h \
-  /Users/steveminor/Desktop/of_v0072_osx_release/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofConstants.h \
+  /Users/steveminor/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofConstants.h \
   ../../../../libs/glew/include/GL/glew.h \
   ../../../../libs/tess2/include/tesselator.h \
   ../../../../libs/openFrameworks/math/ofVec4f.h

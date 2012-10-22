@@ -8,19 +8,22 @@ class Particle{
     public:
     //constructor
     Particle();
-    
-    ofColor color;
-    
-    
-    void update(int _xDest, int _yDest);
-    void draw();
-    
+
+    //methods
+    void update(); //update the position of the particle
+    void display(); //draw the particle
 
     private:
-    ofVec2f v1; 
-    ofVec2f v2;
-    int xPos; //placeHolder to display object
-    int yPos; //place holder to display object
+    //properties
+    //vectors will be converted to 3D vectors in final phase
+    ofVec2f location;
+    ofVec2f velocity;
+    ofVec2f acceleration;
+    ofVec2f dir; //used to calculate the direction of the particle
+    float scalar;
+    float topspeed;
+
+    ofColor color; //final particle should probably glow or something
 };
 
 #endif
