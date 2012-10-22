@@ -211,7 +211,7 @@ obj/x86_64Debug/src/main.o: src/main.cpp \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
  ../../../libs/openFrameworks/3d/ofEasyCam.h src/testApp.h src/ball.h \
- ../../../libs/openFrameworks/app/ofAppGlutWindow.h \
+ src/particle.h ../../../libs/openFrameworks/app/ofAppGlutWindow.h \
  ../../../libs/openFrameworks/app/ofAppBaseWindow.h
 
 ../../../libs/openFrameworks/ofMain.h:
@@ -675,6 +675,8 @@ obj/x86_64Debug/src/main.o: src/main.cpp \
 src/testApp.h:
 
 src/ball.h:
+
+src/particle.h:
 
 ../../../libs/openFrameworks/app/ofAppGlutWindow.h:
 

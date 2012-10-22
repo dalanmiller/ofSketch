@@ -210,7 +210,7 @@ obj/x86_64Debug/src/testApp.o: src/testApp.cpp src/testApp.h \
  ../../../libs/openFrameworks/video/ofVideoPlayer.h \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
- ../../../libs/openFrameworks/3d/ofEasyCam.h src/ball.h
+ ../../../libs/openFrameworks/3d/ofEasyCam.h src/ball.h src/particle.h
 
 src/testApp.h:
 
@@ -673,3 +673,5 @@ src/testApp.h:
 ../../../libs/openFrameworks/3d/ofEasyCam.h:
 
 src/ball.h:
+
+src/particle.h:

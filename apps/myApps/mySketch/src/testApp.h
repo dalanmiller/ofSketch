@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ball.h"
+#include "particle.h"
 
 class testApp : public ofBaseApp{
 
@@ -20,6 +21,9 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		Ball theBall;
+		//single test particle
+        //Particle testParticle;
 
+        //particle array
+        Particle particles[1000];
 };
