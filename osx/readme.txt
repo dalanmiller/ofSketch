@@ -47,3 +47,7 @@ http://forum.openframeworks.cc/
 
 Thanks for reading this and enjoy!
 - The OF Team
+
+Note:
+Building in XCode in OSX 10.7 or later requires the OSX 10.6 SDK. This can be found here:
+http://steveminordesign.com/dump/MacOSX10.6.sdk.zip
