@@ -9,12 +9,17 @@ class Ball{
         Ball();
 
         //Methods
-        void moveTo(int _xDestiny, int _yDestiny);
+        void orbit();
         void draw();
+        int getXPosition();
+        int getYPosition();
 
         //Properties
         int x;
         int y;
+        int radius;
+        float speed;
+        float counter;
         ofColor color;
 };
 #endif

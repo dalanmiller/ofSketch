@@ -24,6 +24,21 @@ void Particle::update(){
     location+=velocity;
 }
 
+//essential to pass Ball by reference
+void Particle::update(Ball target){
+    //contains pointer to base app variable
+    ofVec2f t(target.getXPosition(), target.getYPosition()); //should be able to pass in the vector of the target
+    dir = t - location;
+    dir.normalize();
+    dir *= scalar;
+    acceleration = dir;
+    
+    velocity += acceleration;
+    velocity.limit(topspeed);
+    location+=velocity;
+    
+}
+
 void Particle::display(){
     ofSetColor(color);
     ofFill();
