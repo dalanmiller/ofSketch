@@ -23,6 +23,9 @@ class testApp : public ofBaseApp{
 
 		//single test particle
         //Particle testParticle;
+    
+    
+        Ball testBall;
 
         //particle array
         Particle particles[1000];

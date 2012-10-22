@@ -2,6 +2,7 @@
 #define particle_h
 
 #include "ofMain.h"
+#include "ball.h"
 
 class Particle{
 
@@ -11,6 +12,7 @@ class Particle{
 
     //methods
     void update(); //update the position of the particle
+    void update(Ball target);
     void display(); //draw the particle
 
     private:

@@ -9,13 +9,15 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
     for(int i = 0; i < sizeof( particles) / sizeof( particles[0] ); i++){
-        particles[i].update();
+        particles[i].update(testBall);
     }
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
     ofBackground(ofColor::black);
+    
+    testBall.orbit();
 
     for(int i = 0; i < sizeof( particles) / sizeof( particles[0] ); i++){
         particles[i].display();
