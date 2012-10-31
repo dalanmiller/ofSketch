@@ -1,48 +1,99 @@
 #include "particle.h"
 
 Particle::Particle(){
-    //set the initial color
-    //color.set(ofRandom(255), ofRandom(255), ofRandom(255));
-    color.set(255);
-
-    location.set(ofRandom(ofGetWindowWidth()), ofRandom(ofGetWindowHeight())); //random start location
-    velocity.set(0, 0);
-    topspeed = ofRandom(5);
-    scalar = 0.5;
-    //target.set(ofGetAppPtr()->mouseX, ofGetAppPtr()->mouseY);
+    //default constructor - find out a way to get rid of this
 }
 
-Particle::Particle(int x, int y){//pass in a point that particle should gravitate towards
-    color.set(0);
 
-    //location.set(ofRandom(ofGetWindowWidth()), ofRandom(ofGetWindowHeight())); //random start location
-    location.set(1024, 0);
+
+Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     velocity.set(0, 0);
-    //topspeed = ofRandom(5);
     topspeed = 5;
-    scalar = 0.5;
-    target.set(x, y);
-}
-
-void Particle::update(){
-    //contains pointer to base app variable
-    ofVec2f target(this->target.x, this->target.y);
-    dir = target - location;
-    dir.normalize();
-    dir *= scalar;
-    acceleration = dir;
-
-    velocity += acceleration;
-    velocity.limit(topspeed * ofDist(location.x, location.y, target.x, target.y)/500); //creates an easing effect
-    location+=velocity;
+    scalar= 0.3; //works nicely when coming back with a value of 0.3
+    home.set(homeX, homeY);
+    location = home; //start at home
+    target.set(targetX, targetY);
+    shiv = 0.09;
     
-    std:: cout << ofDist(location.x, location.y, target.x, target.y) << std::endl;
+    firstBlow = true;
+    firstComingBack = false;
+    atHome = true;
+    atTarget = false;
 }
 
 
 void Particle::display(){
-    ofSetColor(color);
+    ofSetColor(ofColor(255, 255, 255, 50));
     ofFill();
-    ofCircle( location.x, location.y, 1);
+    ofCircle(location.x, location.y, 3);
+    ofSetColor(ofColor(255, 255, 255, 150));
+    ofFill();
+    ofCircle(location.x, location.y, 2);
+    ofSetColor(ofColor(255, 255, 255));
+    ofFill();
+    ofCircle(location.x, location.y, 1);
 }
 
+void Particle::blowAway(float force){
+    //approach a target that is slightly offscreen
+    if(!atTarget){
+        atHome = false;
+        dir = target - location;
+        dir.normalize();
+        dir *= force;
+        acceleration = dir;        
+        
+        velocity += acceleration;
+        velocity.limit(topspeed * ofDist(location.x, location.y, target.x, target.y)/100); //creates an easing effect
+        velocity.limit(topspeed);
+        
+        //here we want to add an initial vertical vector
+        if(firstBlow){
+            addInitVertVec();
+            firstBlow = false;
+        }        
+        
+        location+=velocity;
+        std::cout << "location = " << location <<std::endl;
+        
+        if(int(location.x + shiv) == int(target.x + shiv) && int(location.y + shiv)==int(target.y + shiv)){
+            std::cout << "at Target" << std::endl;
+            atTarget = true;
+            firstComingBack = true;
+        }
+    }
+}
+
+void Particle::comeBack(){
+    if(!atHome){
+        atTarget = false;
+        //return to home position
+        dir = home - location;
+        dir.normalize();
+        dir *= scalar;
+        acceleration = dir;
+        
+        velocity += acceleration;
+        velocity.limit(topspeed * ofDist(location.x, location.y, home.x, home.y)/100); //creates an easing effect
+        velocity.limit(topspeed);
+        
+        //here we want to add an initial vertical vector. The initial spike should exceed the maxiumum speed
+        if(firstComingBack){
+            addInitVertVec();
+            firstComingBack = false;
+        }
+        
+        location+=velocity;
+        std::cout << "location = " << location <<std::endl;
+        
+        if(int(location.x + shiv) == int(home.x + shiv) && int(location.y + shiv)==int(home.y + shiv)){
+            std::cout << "at Home" << std::endl;
+            atHome = true;
+            firstBlow = true;
+        }
+    }
+}
+
+void Particle::addInitVertVec(){
+    velocity.y -= 50;
+}

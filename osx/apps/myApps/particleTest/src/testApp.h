@@ -20,6 +20,8 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-        
+        ofPoint ORIGIN;
         Particle p_test;
+        bool blowingAway;
+        bool comingBack;
 };

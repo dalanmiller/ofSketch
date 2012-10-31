@@ -4,28 +4,42 @@
 #include "ofMain.h"
 
 class Particle{
+    
+    
 
     public:
-    //constructor
-    Particle();
-    Particle(int x, int y);
+    Particle(); // default constructor
+    Particle(int homeX, int homeY, int targetX, int targetY); //real constructor
 
     //methods
     void update(); //update the position of the particle
     void display(); //draw the particle
+    void blowAway(float force); //move away from the origin
+    void comeBack(); //return to the origin
 
-    private:
+    
     //properties
-    //vectors will be converted to 3D vectors in final phase
-    ofVec2f location;
+    ofVec2f location; //current location
     ofVec2f velocity;
     ofVec2f acceleration;
+    ofVec2f target;
     ofVec2f dir; //used to calculate the direction of the particle
-    ofPoint target; 
+    ofVec2f home;
     float scalar;
     float topspeed;
+    
+    private:
+    //flags to determine whether to add vertical vector
+    bool firstBlow;
+    bool firstComingBack;
+    bool atHome;
+    bool atTarget;
+    float shiv;
+        
+    void addInitVertVec(); //add an initial vertical vector when blowing away or coming back. Private because it is only to be used internally
+    
 
-    ofColor color; //final particle should probably glow or something
+    
 };
 
 #endif
