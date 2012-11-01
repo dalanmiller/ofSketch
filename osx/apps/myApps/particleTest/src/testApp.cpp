@@ -30,7 +30,6 @@ void testApp::draw(){
     ofRect(0,0,ofGetWidth(),ofGetHeight());
 
     //placeholder
-    ofSetColor(ofColor::white);
     ofFill();
     ofCircle(ORIGIN.x, ORIGIN.y, 50);
     

@@ -14,7 +14,7 @@ class Particle{
     //methods
     void update(); //update the position of the particle
     void display(); //draw the particle
-    void blowAway(float force); //move away from the origin
+    void blowAway(float force); //move away from home
     void comeBack(); //return to the origin
 
     
@@ -34,7 +34,7 @@ class Particle{
     bool firstComingBack;
     bool atHome;
     bool atTarget;
-    float shiv;
+    float minDist;
         
     void addInitVertVec(); //add an initial vertical vector when blowing away or coming back. Private because it is only to be used internally
     

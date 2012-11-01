@@ -1,4 +1,5 @@
 #include "particle.h"
+#include "testApp.h"
 
 Particle::Particle(){
     //default constructor - find out a way to get rid of this
@@ -13,7 +14,7 @@ Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     home.set(homeX, homeY);
     location = home; //start at home
     target.set(targetX, targetY);
-    shiv = 0.09;
+    minDist = 0.1;
     
     firstBlow = true;
     firstComingBack = false;
@@ -56,8 +57,7 @@ void Particle::blowAway(float force){
         location+=velocity;
         std::cout << "location = " << location <<std::endl;
         
-        if(int(location.x + shiv) == int(target.x + shiv) && int(location.y + shiv)==int(target.y + shiv)){
-            std::cout << "at Target" << std::endl;
+        if(ofDist(location.x, location.y, target.x, target.y) <= minDist){
             atTarget = true;
             firstComingBack = true;
         }
@@ -84,10 +84,7 @@ void Particle::comeBack(){
         }
         
         location+=velocity;
-        std::cout << "location = " << location <<std::endl;
-        
-        if(int(location.x + shiv) == int(home.x + shiv) && int(location.y + shiv)==int(home.y + shiv)){
-            std::cout << "at Home" << std::endl;
+        if(ofDist(location.x, location.y, home.x, home.y) <= minDist){
             atHome = true;
             firstBlow = true;
         }
@@ -95,5 +92,6 @@ void Particle::comeBack(){
 }
 
 void Particle::addInitVertVec(){
+    std::cout << ((testApp*)ofGetAppPtr())->ORIGIN << std::endl;
     velocity.y -= 50;
 }
