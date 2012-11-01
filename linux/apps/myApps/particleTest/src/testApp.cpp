@@ -14,10 +14,9 @@ void testApp::setup(){
 
     blowingAway = false;
     ofSetBackgroundAuto(false);
-
-    ofBackground(0,0,0);
+    //ofBackground(0,0,0);
     ofEnableAlphaBlending();
-    //ofSetFrameRate(60);
+    ofSetFrameRate(60);
 
     while(total < PARTICLE_COUNT){
         for(radius = 150; radius > 0; radius -=10){
@@ -50,7 +49,7 @@ void testApp::update(){
 void testApp::draw(){
 
     //background with alpha transparency
-    ofSetColor(211,211,211,50);
+    ofSetColor(175,27,244,50);
     ofRect(0,0,ofGetWidth(),ofGetHeight());
 
     for(int i= 0; i < PARTICLE_COUNT; i++){

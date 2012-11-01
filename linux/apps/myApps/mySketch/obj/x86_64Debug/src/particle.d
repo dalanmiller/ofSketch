@@ -210,7 +210,7 @@ obj/x86_64Debug/src/particle.o: src/particle.cpp src/particle.h \
  ../../../libs/openFrameworks/video/ofVideoPlayer.h \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
- ../../../libs/openFrameworks/3d/ofEasyCam.h
+ ../../../libs/openFrameworks/3d/ofEasyCam.h src/ball.h
 
 src/particle.h:
 
@@ -671,3 +671,5 @@ src/particle.h:
 ../../../libs/openFrameworks/3d/ofCamera.h:
 
 ../../../libs/openFrameworks/3d/ofEasyCam.h:
+
+src/ball.h:

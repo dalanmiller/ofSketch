@@ -5,8 +5,6 @@ Particle::Particle(){
     //default constructor - find out a way to get rid of this
 }
 
-
-
 Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     velocity.set(0, 0);
     topspeed = 5;
@@ -15,7 +13,7 @@ Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     location = home; //start at home
     target.set(targetX, targetY);
     minDist = 0.1;
-    
+
     firstBlow = true;
     firstComingBack = false;
     atHome = true;
@@ -42,21 +40,21 @@ void Particle::blowAway(float force){
         dir = target - location;
         dir.normalize();
         dir *= force;
-        acceleration = dir;        
-        
+        acceleration = dir;
+
         velocity += acceleration;
         velocity.limit(topspeed * ofDist(location.x, location.y, target.x, target.y)/100); //creates an easing effect
         velocity.limit(topspeed);
-        
+
         //here we want to add an initial vertical vector
         if(firstBlow){
             addInitVertVec();
             firstBlow = false;
-        }        
-        
+        }
+
         location+=velocity;
         std::cout << "location = " << location <<std::endl;
-        
+
         if(ofDist(location.x, location.y, target.x, target.y) <= minDist){
             atTarget = true;
             firstComingBack = true;
@@ -72,17 +70,17 @@ void Particle::comeBack(){
         dir.normalize();
         dir *= scalar;
         acceleration = dir;
-        
+
         velocity += acceleration;
         velocity.limit(topspeed * ofDist(location.x, location.y, home.x, home.y)/100); //creates an easing effect
         velocity.limit(topspeed);
-        
+
         //here we want to add an initial vertical vector. The initial spike should exceed the maxiumum speed
         if(firstComingBack){
             addInitVertVec();
             firstComingBack = false;
         }
-        
+
         location+=velocity;
         if(ofDist(location.x, location.y, home.x, home.y) <= minDist){
             atHome = true;
