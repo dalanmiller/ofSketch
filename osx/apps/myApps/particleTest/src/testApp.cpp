@@ -23,7 +23,7 @@ void testApp::setup(){
             layer++;
 
             for(int i = 0; i < count; i++){
-                 particles[total] = Particle(radius * sin(i*2*PI/count)+ORIGIN.x, radius*cos(i*2*PI/count)+ORIGIN.y, 1000, 600);
+                 particles[total] = Particle(radius * sin(i*2*PI/count)+ORIGIN.x, radius*cos(i*2*PI/count)+ORIGIN.y, 1100, 600);
                 total++;
             }
             count *= 0.95;
@@ -63,15 +63,14 @@ void testApp::keyPressed(int key){
         blowingAway = true;
         comingBack = false;
     }
-    if(key == 99){//'c'
-        comingBack = true;
-        blowingAway = false;
-    }
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+    if(key == 98){//'b'
+        comingBack = true;
+        blowingAway = false;
+    }
 }
 
 //--------------------------------------------------------------

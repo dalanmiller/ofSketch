@@ -8,7 +8,7 @@ Particle::Particle(){
 
 Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     velocity.set(0, 0);
-    topspeed = int(ofRandom(3,5));
+    topspeed = int(ofRandom(5,7));
     scalar= ofRandom(2.0, 3.5); //works nicely when coming back with a value of 0.3
     home.set(homeX, homeY);
     location = home; //start at home
@@ -93,9 +93,11 @@ void Particle::addInitVertVec(){
     int x = ((testApp*)ofGetAppPtr())->ORIGIN.x;
     int y = ((testApp*)ofGetAppPtr())->ORIGIN.y;
 
-    velocity.y -= 5;
+    velocity.y -= int(ofRandom(-15, 15));
+   velocity.y -= ((x + 150) - location.x) / 10;
     
-    if(location.y - y > 0){
-        velocity.y *= -1;
-    }
+    //reverse direction if below the origin
+    //if(location.y - y > 0){
+    //    velocity.y *= -1;
+    //}
 }
