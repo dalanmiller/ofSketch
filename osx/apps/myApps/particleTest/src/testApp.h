@@ -9,6 +9,10 @@ class testApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+		int count;
+		int total;
+		int layer;
+        int radius;
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
@@ -19,9 +23,10 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-    
+
         ofPoint ORIGIN;
         Particle p_test;
+
         bool blowingAway;
         bool comingBack;
 };

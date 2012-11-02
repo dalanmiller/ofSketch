@@ -1,42 +1,60 @@
 #include "testApp.h"
+#include <math.h>
+const int PARTICLE_COUNT = 555;
+Particle particles[PARTICLE_COUNT];
+
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    ORIGIN.set(100, 600);
-    p_test = Particle(50, 600, 1000, 600); //homeX, homeY, targetX, targetY
+    count = 55;
+    total = 0;
+    ORIGIN.set(200, 600);
+    radius = 150;
+    layer = 0;
+
     blowingAway = false;
-    
     ofSetBackgroundAuto(false);
-    ofBackground(0,0,0);
+    //ofBackground(0,0,0);
     ofEnableAlphaBlending();
     ofSetFrameRate(60);
+
+    while(total < PARTICLE_COUNT){
+        for(radius = 150; radius > 0; radius -=10){
+            layer++;
+
+            for(int i = 0; i < count; i++){
+                 particles[total] = Particle(radius * sin(i*2*PI/count)+ORIGIN.x, radius*cos(i*2*PI/count)+ORIGIN.y, 1000, 600);
+                total++;
+            }
+            count *= 0.95;
+        }
+    }
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
     if(blowingAway){
-        p_test.blowAway(0.3);
+       for(int i= 0; i < PARTICLE_COUNT; i++){
+            particles[i].blowAway(0.3);
+        }
     }
     if(comingBack){
-        p_test.comeBack();
+        for(int i= 0; i < PARTICLE_COUNT; i++){
+            particles[i].comeBack();
+        }
     }
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    
+
     //background with alpha transparency
-    ofSetColor(211,211,211,50);
+    ofSetColor(175,27,244,50);
     ofRect(0,0,ofGetWidth(),ofGetHeight());
 
-    //placeholder
-    ofFill();
-    ofCircle(ORIGIN.x, ORIGIN.y, 50);
-    
-    
-    //"particle"
-    
-    p_test.display();
+    for(int i= 0; i < PARTICLE_COUNT; i++){
+        particles[i].display();
+    }
 }
 
 //--------------------------------------------------------------
@@ -48,12 +66,12 @@ void testApp::keyPressed(int key){
     if(key == 99){//'c'
         comingBack = true;
         blowingAway = false;
-    }      
+    }
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-    
+
 }
 
 //--------------------------------------------------------------
@@ -87,6 +105,6 @@ void testApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void testApp::dragEvent(ofDragInfo dragInfo){
 
 }
