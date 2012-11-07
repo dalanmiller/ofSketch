@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "particle.h"
+#include "ofxJSONElement.h"
 
 class testApp : public ofBaseApp{
 
@@ -29,4 +30,8 @@ class testApp : public ofBaseApp{
 
         bool blowingAway;
         bool comingBack;
+    
+        ofTrueTypeFont futuraMedium;
+    
+        ofxJSONElement result;
 };

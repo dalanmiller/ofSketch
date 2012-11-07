@@ -6,6 +6,7 @@ Particle particles[PARTICLE_COUNT];
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    //--- BEGIN PARTICLE SETUP --//
     count = 55;
     total = 0;
     ORIGIN.set(200, 600);
@@ -29,6 +30,22 @@ void testApp::setup(){
             count *= 0.95;
         }
     }
+    //-- END PARTICLE SETUP--//
+    futuraMedium.loadFont("Futura.ttc", 12);
+    
+    // Twitter API: http://dev.twitter.com/doc/get/trends/current
+	string url = "http://search.twitter.com/search.json?q=%23cobra&src=typd";
+    // Now parse the JSON
+	bool parsingSuccessful = result.open(url);
+	if ( parsingSuccessful )
+    {
+		cout << result.getRawString() << endl;
+		
+	}
+    else
+    {
+		cout  << "Failed to parse JSON" << endl;
+	}
 }
 
 //--------------------------------------------------------------
@@ -55,6 +72,18 @@ void testApp::draw(){
     for(int i= 0; i < PARTICLE_COUNT; i++){
         particles[i].display();
     }
+    
+    //--TWITTER TEST --//
+    ofSetHexColor(0x000000);
+    
+    ofxJSONElement text = result["results"];
+    //for(int i=0; i < text.size(); i++)
+    for(int i=0; i < 5; i++)
+	{
+		string message = text[i]["text"].asString();
+		futuraMedium.drawString(message, 10, 40*i+40);
+	}
+    
 }
 
 //--------------------------------------------------------------
