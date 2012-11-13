@@ -1,5 +1,6 @@
 #include "particle.h"
 #include "testApp.h"
+#include "ofMain.h"
 
 Particle::Particle(){
     //default constructor - find out a way to get rid of this
@@ -7,8 +8,8 @@ Particle::Particle(){
 
 Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     velocity.set(0, 0);
-    topspeed = 5;
-    scalar= 0.3; //works nicely when coming back with a value of 0.3
+    topspeed = int(ofRandom(3,5));
+    scalar= ofRandom(2.0, 3.5); //works nicely when coming back with a value of 0.3
     home.set(homeX, homeY);
     location = home; //start at home
     target.set(targetX, targetY);
@@ -39,7 +40,7 @@ void Particle::blowAway(float force){
         atHome = false;
         dir = target - location;
         dir.normalize();
-        dir *= force;
+        dir *= force * scalar;
         acceleration = dir;
 
         velocity += acceleration;
@@ -53,7 +54,6 @@ void Particle::blowAway(float force){
         }
 
         location+=velocity;
-        std::cout << "location = " << location <<std::endl;
 
         if(ofDist(location.x, location.y, target.x, target.y) <= minDist){
             atTarget = true;
@@ -72,8 +72,8 @@ void Particle::comeBack(){
         acceleration = dir;
 
         velocity += acceleration;
-        velocity.limit(topspeed * ofDist(location.x, location.y, home.x, home.y)/100); //creates an easing effect
-        velocity.limit(topspeed);
+        velocity.limit(5 * ofDist(location.x, location.y, home.x, home.y)/100); //creates an easing effect
+        velocity.limit(5);
 
         //here we want to add an initial vertical vector. The initial spike should exceed the maxiumum speed
         if(firstComingBack){
@@ -90,6 +90,12 @@ void Particle::comeBack(){
 }
 
 void Particle::addInitVertVec(){
-    std::cout << ((testApp*)ofGetAppPtr())->ORIGIN << std::endl;
-    velocity.y -= 50;
+    int x = ((testApp*)ofGetAppPtr())->ORIGIN.x;
+    int y = ((testApp*)ofGetAppPtr())->ORIGIN.y;
+
+    velocity.y -= 5;
+    
+    if(location.y - y > 0){
+        velocity.y *= -1;
+    }
 }

@@ -7,13 +7,15 @@ app = Flask(__name__)
 "routing"
 @app.route('/<string:search_string>')
 def index(search_string):
-	#hit the twitter search api with the string
+	#alternatively, run the code in requests_test.py with this string
 	r = requests.get('http://search.twitter.com/search.json?q='+search_string);
 	if(r.status_code == 200):
 		json_object = json.load(r.json)
 	return "No good"
 	#iterate through results and save any new tweets
 	#into the database
+
+#example route	
 @app.route('/hello')
 def hello_world():
 	return 'Hello World!'
