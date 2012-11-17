@@ -1,5 +1,6 @@
 import requests, pymongo, bson #alternative to urllib2
-from flask import Flask, json
+from flask import Flask, jsonify
+import json 
 
 app = Flask(__name__)
 
@@ -10,7 +11,7 @@ db = connection.dandelion
 collection = db.dandelion #set the collection
 
 "routing"
-@app.route('/<string:search_string>')
+@app.route('/<search_string>')
 def index(search_string):
 	url_query = "http://search.twitter.com/search.json?q=%23{0}".format(search_string) # search for #gundam
 	r = requests.get(url_query)
@@ -22,8 +23,15 @@ def index(search_string):
 				tweet["granted"] = False; #add a wishGranted parameter
 				collection.insert(tweet)
 	#return everthing in the database where granted = false;
-	wishes = collection.find({"granted" : False})
+	wishes = collection.find({"granted" : False}, {'_id':False})
 	#having a hard time converting the wishes into JSON, which is what real wishes are made of anyway
+
+	wishes = [x for x in wishes]
+
+	#return jsonify(wishes[0]) 
+
+	return json.dumps(wishes) 
+
 
 #example route	
 @app.route('/hello')
