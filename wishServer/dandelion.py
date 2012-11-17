@@ -13,7 +13,7 @@ collection = db.dandelion #set the collection
 "routing"
 @app.route('/<search_string>')
 def index(search_string):
-	url_query = "http://search.twitter.com/search.json?q=%23{0}".format(search_string) # search for #gundam
+	url_query = "http://search.twitter.com/search.json?q=%23{0}".format(search_string) # search for #gundam(test)
 	r = requests.get(url_query)
 
 	if(r.status_code == 200):
@@ -24,12 +24,7 @@ def index(search_string):
 				collection.insert(tweet)
 	#return everthing in the database where granted = false;
 	wishes = collection.find({"granted" : False}, {'_id':False})
-	#having a hard time converting the wishes into JSON, which is what real wishes are made of anyway
-
-	wishes = [x for x in wishes]
-
-	#return jsonify(wishes[0]) 
-
+	wishes = [x for x in wishes] #still must iterate through cursor
 	return json.dumps(wishes) 
 
 
