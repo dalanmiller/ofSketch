@@ -418,7 +418,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				"HEADER_SEARCH_PATHS[sdk=macosx10.6]" = (
 					"$(OF_CORE_HEADERS),/**",
-					"\"/Users/steveminor/Desktop/ofSketch/osx/addons/ofxJSON/lib/include\"/**",
+					"\"/Users/steveminor/Documents/ofSketch/osx/addons/ofxJSON/lib/include\"/**",
 				);
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -509,8 +509,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				"HEADER_SEARCH_PATHS[sdk=macosx10.6]" = (
-					"$(OF_CORE_HEADERS)",
-					"\"/Users/steveminor/Desktop/ofSketch/osx/addons/ofxJSON/lib/include\"",
+					"$(OF_CORE_HEADERS)/**",
+					"\"/Users/steveminor/Documents/ofSketch/osx/addons/ofxJSON/lib/include\"/**",
 				);
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";

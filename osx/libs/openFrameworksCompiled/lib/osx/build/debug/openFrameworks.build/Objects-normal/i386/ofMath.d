@@ -1,14 +1,14 @@
 dependencies: \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.cpp \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.cpp \
   ../../../../libs/openFrameworks/math/ofMath.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
   ../../../../libs/openFrameworks/math/ofVec2f.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofConstants.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofConstants.h \
   ../../../../libs/glew/include/GL/glew.h \
   ../../../../libs/tess2/include/tesselator.h \
   ../../../../libs/openFrameworks/math/ofVec4f.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofUtils.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofUtils.h \
   ../../../../libs/openFrameworks/utils/ofLog.h \
   ../../../../libs/openFrameworks/utils/ofFileUtils.h \
   ../../../../libs/poco/include/Poco/File.h \
@@ -20,13 +20,13 @@ dependencies: \
   ../../../../libs/poco/include/Poco/Types.h \
   ../../../../libs/poco/include/Poco/Timestamp.h \
   ../../../../libs/poco/include/Poco/File_UNIX.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofTypes.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofTypes.h \
   ../../../../libs/openFrameworks/types/ofColor.h \
   ../../../../libs/poco/include/Poco/Mutex.h \
   ../../../../libs/poco/include/Poco/Exception.h \
   ../../../../libs/poco/include/Poco/ScopedLock.h \
   ../../../../libs/poco/include/Poco/Mutex_POSIX.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/app/ofAppRunner.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofRectangle.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofNoise.h \
-  /Users/wcb6/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.h
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/app/ofAppRunner.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofRectangle.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofNoise.h \
+  /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.h

@@ -33,5 +33,5 @@ class testApp : public ofBaseApp{
     
         ofTrueTypeFont futuraMedium;
     
-        ofxJSONElement result;
+        ofxJSONElement result; //result from the database
 };

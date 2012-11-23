@@ -34,6 +34,11 @@ class Particle{
     float minDist;
 
     void addInitVertVec(); //add an initial vertical vector when blowing away or coming back. Private because it is only to be used internally
+    
+    
 };
+
+int genParticleXRange();
+int genParticleYRange();
 
 #endif

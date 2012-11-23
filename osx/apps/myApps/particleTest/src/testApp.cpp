@@ -1,7 +1,10 @@
 #include "testApp.h"
+
 #include <math.h>
+
 const int PARTICLE_COUNT = 555;
 Particle particles[PARTICLE_COUNT];
+float Force = 0.0;
 
 
 //--------------------------------------------------------------
@@ -9,13 +12,12 @@ void testApp::setup(){
     //--- BEGIN PARTICLE SETUP --//
     count = 55;
     total = 0;
-    ORIGIN.set(200, 600);
+    ORIGIN.set(1024/2, 768/2);
     radius = 150;
     layer = 0;
-
+    
     blowingAway = false;
     ofSetBackgroundAuto(false);
-    //ofBackground(0,0,0);
     ofEnableAlphaBlending();
     ofSetFrameRate(60);
 
@@ -24,7 +26,7 @@ void testApp::setup(){
             layer++;
 
             for(int i = 0; i < count; i++){
-                 particles[total] = Particle(radius * sin(i*2*PI/count)+ORIGIN.x, radius*cos(i*2*PI/count)+ORIGIN.y, 1100, 600);
+                 particles[total] = Particle(radius * sin(i*2*PI/count)+ORIGIN.x, radius*cos(i*2*PI/count)+ORIGIN.y, genParticleXRange(), genParticleYRange());
                 total++;
             }
             count *= 0.95;
@@ -33,13 +35,13 @@ void testApp::setup(){
     //-- END PARTICLE SETUP--//
     futuraMedium.loadFont("Futura.ttc", 12);
     
-    // Twitter API: http://dev.twitter.com/doc/get/trends/current
-	string url = "http://search.twitter.com/search.json?q=%23cobra&src=typd";
+	string url = "http://localhost:5000/cobra";
     // Now parse the JSON
 	bool parsingSuccessful = result.open(url);
 	if ( parsingSuccessful )
     {
-		cout << result.getRawString() << endl;
+		//cout << result.getRawString() << endl;
+        cout << "Parsing successful" << endl;
 		
 	}
     else
@@ -52,7 +54,7 @@ void testApp::setup(){
 void testApp::update(){
     if(blowingAway){
        for(int i= 0; i < PARTICLE_COUNT; i++){
-            particles[i].blowAway(0.3);
+            particles[i].blowAway(Force);
         }
     }
     if(comingBack){
@@ -60,6 +62,9 @@ void testApp::update(){
             particles[i].comeBack();
         }
     }
+    
+    //Timer test
+    //std::cout << "Seconds Elapsed: " <<  ofGetElapsedTimef() << std::endl;;
 }
 
 //--------------------------------------------------------------
@@ -76,7 +81,7 @@ void testApp::draw(){
     //--TWITTER TEST --//
     ofSetHexColor(0x000000);
     
-    ofxJSONElement text = result["results"];
+    ofxJSONElement text = result;
     //for(int i=0; i < text.size(); i++)
     for(int i=0; i < 5; i++)
 	{
@@ -88,18 +93,28 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
+    //357 = Up
+    //359 = Down
+    cout << key << endl;
     if(key == 98){//'b'
         blowingAway = true;
         comingBack = false;
+    }else if(key == 357){
+        Force += 0.1;
+    }
+    else if(key == 359){
+        Force -= 0.1;
     }
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
+    
     if(key == 98){//'b'
         comingBack = true;
         blowingAway = false;
     }
+
 }
 
 //--------------------------------------------------------------

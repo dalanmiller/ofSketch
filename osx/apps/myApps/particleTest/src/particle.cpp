@@ -40,7 +40,7 @@ void Particle::blowAway(float force){
         atHome = false;
         dir = target - location;
         dir.normalize();
-        dir *= force * scalar;
+        dir *= scalar;
         acceleration = dir;
 
         velocity += acceleration;
@@ -53,7 +53,7 @@ void Particle::blowAway(float force){
             firstBlow = false;
         }
 
-        location+=velocity;
+        location+=velocity*force;
 
         if(ofDist(location.x, location.y, target.x, target.y) <= minDist){
             atTarget = true;
@@ -100,4 +100,15 @@ void Particle::addInitVertVec(){
     //if(location.y - y > 0){
     //    velocity.y *= -1;
     //}
+}
+
+int genParticleXRange(){
+    return int(ofRandom(0, 1024));
+
+}
+
+int genParticleYRange(){
+    static bool top = false; //false == bottom, true == top
+    top = !top;
+    return top?int(ofRandom(-5, -15)):int(ofRandom(768, 768));
 }
