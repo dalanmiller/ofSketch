@@ -44,6 +44,20 @@ def count():
 	a  = collection.find()
 	return "There are %d records in the database" % a.count()
 
+@app.route('/manage')
+def manage():
+	#get all the records from the database where granted has been marked false
+	wishes = collection.find({"granted" : False}, {'_id':False})
+	wishes = [x for x in wishes] #iterate through cursor
+	names = ["Steve", "Hillary"]
+	return render_template('manage.html', names=names)
+
+
+@app.route('/blacklist')
+def blacklist():
+	#see which items have been marked as granted, with the option to bring them back
+	wishes = collection.find({"granted" : True}, {'_id':False})
+
 #variable rule
 @app.route('/granted/<int:tweet_id>')
 def mark_as_granted(tweet_id):
