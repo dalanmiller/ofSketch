@@ -46,8 +46,8 @@ cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofM
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofPolyline.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofFbo.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofFbo.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofGLRenderer.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLRenderer.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofLight.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofLight.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofMaterial.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofMaterial.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofLight.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofLight.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofShader.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofShader.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofTexture.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofTexture.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofVbo.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofVbo.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
@@ -4221,20 +4221,40 @@ c00000000509334B100000000000013F2
 t1351824561
 s5106
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofCamera.h
+c00000000509334B100000000000007E7
+t1351824561
+s2023
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofEasyCam.cpp
 c00000000509334B10000000000001BBB
 t1351824561
 s7099
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofEasyCam.h
+c00000000509334B1000000000000084E
+t1351824561
+s2126
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofMesh.cpp
 c00000000509334B100000000000065D7
 t1351824561
 s26071
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofMesh.h
+c00000000509334B100000000000010F0
+t1351824561
+s4336
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofNode.cpp
 c00000000509334B100000000000024ED
 t1351824561
 s9453
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofNode.h
+c00000000509334B1000000000000142B
+t1351824561
+s5163
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/app/ofAppGlutWindow.cpp
 c00000000509334B10000000000005247
@@ -4272,15 +4292,30 @@ c00000000509334B10000000000001C9E
 t1351824561
 s7326
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/events/ofEvents.h
+c00000000509334B10000000000001CB9
+t1351824561
+s7353
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofFbo.cpp
 c00000000509334B10000000000006C97
 t1351824561
 s27799
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofFbo.h
+c00000000509334B1000000000000104A
+t1351824561
+s4170
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLRenderer.cpp
 c00000000509334B100000000000081FA
 t1351824561
 s33274
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLRenderer.h
+c00000000509334B100000000000012E2
+t1351824561
+s4834
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLUtils.h
 c00000000509334B10000000000000D78
@@ -4292,30 +4327,60 @@ c00000000509334B10000000000002B80
 t1351824561
 s11136
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofLight.h
+c00000000509334B10000000000000934
+t1351824561
+s2356
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofMaterial.cpp
 c00000000509334B10000000000000963
 t1351824561
 s2403
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofMaterial.h
+c00000000509334B10000000000000555
+t1351824561
+s1365
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofShader.cpp
 c00000000509334B10000000000004686
 t1351824561
 s18054
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofShader.h
+c00000000509334B10000000000001039
+t1351824561
+s4153
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofTexture.cpp
 c00000000509334B10000000000008680
 t1351824561
 s34432
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofTexture.h
+c00000000509334B1000000000000164D
+t1351824561
+s5709
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofVbo.cpp
 c00000000509334B10000000000003B04
 t1351824561
 s15108
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofVbo.h
+c00000000509334B10000000000000B4B
+t1351824561
+s2891
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofVboMesh.cpp
 c00000000509334B1000000000000112C
 t1351824561
 s4396
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofVboMesh.h
+c00000000509334B1000000000000029E
+t1351824561
+s670
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofBitmapFont.cpp
 c00000000509334B1000000000000A0A2
@@ -4327,15 +4392,30 @@ c00000000509334B100000000000081F4
 t1351824561
 s33268
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofCairoRenderer.h
+c00000000509334B10000000000001627
+t1351824561
+s5671
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofGraphics.cpp
 c00000000509334B10000000000007E5F
 t1351824561
 s32351
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofGraphics.h
+c00000000509334B10000000000002231
+t1351824561
+s8753
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofImage.cpp
 c00000000509334B10000000000008A2A
 t1351824561
 s35370
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofImage.h
+c00000000509334B10000000000002116
+t1351824561
+s8470
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPath.cpp
 c00000000509334B100000000000048FC
@@ -4347,10 +4427,25 @@ c00000000509334B10000000000005AF4
 t1351824561
 s23284
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPixels.h
+c00000000509334B100000000000013D2
+t1351824561
+s5074
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.cpp
 c00000000509334B10000000000005DCF
 t1351824561
 s24015
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.h
+c00000000509334B10000000000001538
+t1351824561
+s5432
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofRendererCollection.h
+c00000000509334B100000000000029A8
+t1351824561
+s10664
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofTessellator.cpp
 c00000000509334B100000000000016E1
@@ -4362,10 +4457,20 @@ c00000000509334B10000000000006550
 t1351824561
 s25936
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofTrueTypeFont.h
+c00000000509334B10000000000000A3C
+t1351824561
+s2620
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.cpp
 c00000000509334B10000000000002356
 t1351824561
 s9046
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.h
+c00000000509334B10000000000000B46
+t1351824561
+s2886
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMatrix3x3.cpp
 c00000000509334B10000000000001824
@@ -4377,6 +4482,11 @@ c00000000509334B1000000000000AC90
 t1351824561
 s44176
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMatrix4x4.h
+c00000000509334B10000000000006D64
+t1351824561
+s28004
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofQuaternion.cpp
 c00000000509334B100000000000024C4
 t1351824561
@@ -4386,6 +4496,11 @@ N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/os
 c00000000509334B100000000000000C7
 t1351824561
 s199
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h
+c00000000509334B1000000000000654E
+t1351824561
+s25934
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec4f.cpp
 c00000000509334B100000000000000E7
@@ -4427,15 +4542,30 @@ c00000000509334B10000000000001355
 t1351824561
 s4949
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/sound/ofSoundPlayer.h
+c00000000509334B10000000000000724
+t1351824561
+s1828
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/sound/ofSoundStream.cpp
 c00000000509334B10000000000000FB6
 t1351824561
 s4022
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/sound/ofSoundStream.h
+c00000000509334B100000000000006DB
+t1351824561
+s1755
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofBaseTypes.cpp
 c00000000509334B100000000000014F2
 t1351824561
 s5362
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofBaseTypes.h
+c00000000509334B100000000000030F2
+t1351824561
+s12530
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofColor.cpp
 c00000000509334B1000000000000333A
@@ -4447,6 +4577,11 @@ c00000000509334B10000000000000015
 t1351824561
 s21
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h
+c00000000509334B1000000000000003D
+t1351824561
+s61
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofRectangle.cpp
 c00000000509334B100000000000056A1
 t1351824561
@@ -4456,6 +4591,11 @@ N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/os
 c00000000509334B1000000000000104B
 t1351824561
 s4171
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofConstants.h
+c00000000509334B10000000000004003
+t1351824561
+s16387
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofFileUtils.cpp
 c00000000509334B10000000000009FA9
@@ -4467,6 +4607,11 @@ c00000000509334B10000000000001C07
 t1351824561
 s7175
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofLog.h
+c00000000509334B100000000000015C0
+t1351824561
+s5568
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofNoise.h
 c00000000509334B10000000000004F25
 t1351824561
@@ -4477,20 +4622,40 @@ c00000000509334B10000000000007050
 t1351824561
 s28752
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofSystemUtils.h
+c00000000509334B10000000000000202
+t1351824561
+s514
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofThread.cpp
 c00000000509334B100000000000011BD
 t1351824561
 s4541
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofThread.h
+c00000000509334B1000000000000141A
+t1351824561
+s5146
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofURLFileLoader.cpp
 c00000000509334B1000000000000169D
 t1351824561
 s5789
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofURLFileLoader.h
+c00000000509334B100000000000008C4
+t1351824561
+s2244
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofUtils.cpp
 c00000000509334B100000000000047A4
 t1351824561
 s18340
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofUtils.h
+c00000000509334B10000000000001592
+t1351824561
+s5522
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/video/ofQTKitGrabber.mm
 c00000000509334B1000000000000718F
@@ -4512,6 +4677,11 @@ c00000000509334B10000000000002554
 t1351824561
 s9556
 
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/video/ofQtUtils.h
+c00000000509334B100000000000006EC
+t1351824561
+s1772
+
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/video/ofQuickTimeGrabber.cpp
 c00000000509334B10000000000005BAC
 t1351824561
@@ -4531,6 +4701,11 @@ N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/os
 c00000000509334B10000000000002A2B
 t1351824561
 s10795
+
+N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/video/ofVideoPlayer.h
+c00000000509334B10000000000000B6E
+t1351824561
+s2926
 
 N/Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/of3dUtils.o
 t1353653862
@@ -7118,7 +7293,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciese4bd1a635f5fb641^58021d635f5fb641^---0#1#0#--18"Check dependencies36"C9DB0149-C060-439B-ABBC-45B8A1722435-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies11007c137264b641^957c7c137264b641^---0#1#0#--18"Check dependencies36"B663DE11-859F-40D0-8487-586082F95FAF-
 
 CCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/of3dUtils.o /Users/steveminor/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/of3dUtils.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 s373949857.195964

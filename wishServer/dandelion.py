@@ -13,7 +13,7 @@ collection = db.dandelion #set the collection
 "routing"
 @app.route('/<search_string>')
 def index(search_string):
-	url_query = "http://search.twitter.com/search.json?q=%23{0}".format(search_string) # search for #gundam(test)
+	url_query = "http://search.twitter.com/search.json?q={0}".format(search_string) # search for "I wish"
 	r = requests.get(url_query)
 
 	if(r.status_code == 200):

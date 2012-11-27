@@ -24,6 +24,7 @@ class Particle{
     ofVec2f home;
     float scalar;
     float topspeed;
+    unsigned static int score; //share accross instances
 
     private:
     //flags to determine whether to add vertical vector
@@ -31,10 +32,7 @@ class Particle{
     bool firstComingBack;
     bool atHome;
     bool atTarget;
-    float minDist;
-
-    void addInitVertVec(); //add an initial vertical vector when blowing away or coming back. Private because it is only to be used internally
-    
+    float minDist;    
     
 };
 

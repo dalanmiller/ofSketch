@@ -1,11 +1,20 @@
 #include "testApp.h"
-
 #include <math.h>
+#include <time.h>
 
 const int PARTICLE_COUNT = 555;
 Particle particles[PARTICLE_COUNT];
 float Force = 0.0;
+float scorePercent = 0.0;
+ofxJSONElement text;
 
+
+//-- Timer variables --//
+time_t mark = time(NULL);
+time_t now;
+double dif;
+int previous = 0;
+int recordCount;
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -15,6 +24,8 @@ void testApp::setup(){
     ORIGIN.set(1024/2, 768/2);
     radius = 150;
     layer = 0;
+    wishindex = 0;
+    incremented = false;
     
     blowingAway = false;
     ofSetBackgroundAuto(false);
@@ -33,9 +44,9 @@ void testApp::setup(){
         }
     }
     //-- END PARTICLE SETUP--//
-    futuraMedium.loadFont("Futura.ttc", 12);
+    futuraMedium.loadFont("Futura.ttc", 14);
     
-	string url = "http://localhost:5000/cobra";
+	string url = "http://localhost:5000/I wish";
     // Now parse the JSON
 	bool parsingSuccessful = result.open(url);
 	if ( parsingSuccessful )
@@ -48,6 +59,9 @@ void testApp::setup(){
     {
 		cout  << "Failed to parse JSON" << endl;
 	}
+    
+    text = result;
+    recordCount = text.size();
 }
 
 //--------------------------------------------------------------
@@ -58,53 +72,90 @@ void testApp::update(){
         }
     }
     if(comingBack){
+        incremented = false; //flag. You can move to the next record once the particles are coming back
         for(int i= 0; i < PARTICLE_COUNT; i++){
             particles[i].comeBack();
         }
     }
     
-    //Timer test
-    //std::cout << "Seconds Elapsed: " <<  ofGetElapsedTimef() << std::endl;;
+    scorePercent = Particle::score/float(PARTICLE_COUNT);
+    if(scorePercent == 1 && !incremented){
+        incrementWishList();
+        incremented = true;
+    }
+    
+    //-- Timer --//
+    now = time(NULL);
+    dif = difftime(now, mark);
+    if(dif != previous){
+        previous = dif;
+        if(previous % 5 ==0){
+            //do something after 5 seconds have passed
+        }
+    }
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 
     //background with alpha transparency
-    ofSetColor(175,27,244,50);
+    ofSetColor(175,27,244, 50);
     ofRect(0,0,ofGetWidth(),ofGetHeight());
 
     for(int i= 0; i < PARTICLE_COUNT; i++){
         particles[i].display();
     }
     
-    //--TWITTER TEST --//
-    ofSetHexColor(0x000000);
+    //--Score Bar--//
+    ofSetColor(255, 255, 255, 30);
+    ofRect(0, (ofGetHeight()/2)-12.5, ofGetWidth()*scorePercent, 100);
     
-    ofxJSONElement text = result;
-    //for(int i=0; i < text.size(); i++)
-    for(int i=0; i < 5; i++)
-	{
-		string message = text[i]["text"].asString();
-		futuraMedium.drawString(message, 10, 40*i+40);
-	}
-    
+    //-- Text --//
+    ofSetHexColor(0xFFFFFF);
+    string message = text[wishindex]["text"].asString();
+    futuraMedium.drawString(message, 10, 40);
 }
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
     //357 = Up
     //359 = Down
-    cout << key << endl;
-    if(key == 98){//'b'
-        blowingAway = true;
-        comingBack = false;
-    }else if(key == 357){
-        Force += 0.1;
+    //358 = Left
+    //356 = Right
+   
+    switch(key){
+        case(98):
+            blowingAway = true;
+            comingBack = false;
+            break;
+        case(357):
+            //up
+            Force += 0.1;
+            break;
+        case(359):
+            //down
+            Force -= 0.1;
+            break;
+        case(358):
+            //right
+            incrementWishList();
+            break;
+        case(356):
+            decrementWishList();
+            //left
+            break;
+        default:
+            cout << key << " was pressed " <<  endl;
     }
-    else if(key == 359){
-        Force -= 0.1;
-    }
+}
+
+void testApp::incrementWishList(){
+    wishindex++;
+    wishindex %= recordCount;
+}
+
+void testApp::decrementWishList(){
+    wishindex > 0? wishindex--: wishindex = recordCount; //ternary, bitches
 }
 
 //--------------------------------------------------------------

@@ -14,6 +14,8 @@ class testApp : public ofBaseApp{
 		int total;
 		int layer;
         int radius;
+        int wishindex;
+        bool incremented;
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
@@ -24,6 +26,8 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+        void incrementWishList();
+        void decrementWishList();
 
         ofPoint ORIGIN;
         Particle p_test;

@@ -8,7 +8,7 @@ Particle::Particle(){
 
 Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     velocity.set(0, 0);
-    topspeed = int(ofRandom(5,7));
+    topspeed = int(ofRandom(5,10));
     scalar= ofRandom(2.0, 3.5); //works nicely when coming back with a value of 0.3
     home.set(homeX, homeY);
     location = home; //start at home
@@ -20,6 +20,9 @@ Particle::Particle(int homeX, int homeY, int targetX, int targetY){
     atHome = true;
     atTarget = false;
 }
+
+//initialize static score
+unsigned int Particle::score = 0;
 
 
 void Particle::display(){
@@ -45,18 +48,14 @@ void Particle::blowAway(float force){
 
         velocity += acceleration;
         velocity.limit(topspeed * ofDist(location.x, location.y, target.x, target.y)/100); //creates an easing effect
-        velocity.limit(topspeed);
+        velocity.limit(force * topspeed);
 
-        //here we want to add an initial vertical vector
-        if(firstBlow){
-            addInitVertVec();
-            firstBlow = false;
-        }
-
-        location+=velocity*force;
+        location+=velocity;
 
         if(ofDist(location.x, location.y, target.x, target.y) <= minDist){
             atTarget = true;
+            if(score < 555)
+                score++;
             firstComingBack = true;
         }
     }
@@ -74,12 +73,9 @@ void Particle::comeBack(){
         velocity += acceleration;
         velocity.limit(5 * ofDist(location.x, location.y, home.x, home.y)/100); //creates an easing effect
         velocity.limit(5);
-
-        //here we want to add an initial vertical vector. The initial spike should exceed the maxiumum speed
-        if(firstComingBack){
-            addInitVertVec();
-            firstComingBack = false;
-        }
+        
+        if(score > 0)
+            score--;
 
         location+=velocity;
         if(ofDist(location.x, location.y, home.x, home.y) <= minDist){
@@ -87,19 +83,6 @@ void Particle::comeBack(){
             firstBlow = true;
         }
     }
-}
-
-void Particle::addInitVertVec(){
-    int x = ((testApp*)ofGetAppPtr())->ORIGIN.x;
-    int y = ((testApp*)ofGetAppPtr())->ORIGIN.y;
-
-    velocity.y -= int(ofRandom(-15, 15));
-   velocity.y -= ((x + 150) - location.x) / 10;
-    
-    //reverse direction if below the origin
-    //if(location.y - y > 0){
-    //    velocity.y *= -1;
-    //}
 }
 
 int genParticleXRange(){
@@ -112,3 +95,5 @@ int genParticleYRange(){
     top = !top;
     return top?int(ofRandom(-5, -15)):int(ofRandom(768, 768));
 }
+
+
