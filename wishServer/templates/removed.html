@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<title>Dandelion Management</title>
+<body>
+	{% if todelete is not none %}
+	<h2>The following were marked as 'granted' <h2>
+	<ul>
+	{% for d in todelete %}
+	<li>{{d}}</li>
+	{% endfor %}
+	</ul>
+	{% else %}
+	<h2>Nothing was removed</h2>
+	{% endif %}
+</body>
+</html>
