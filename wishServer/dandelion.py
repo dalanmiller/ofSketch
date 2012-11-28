@@ -37,12 +37,15 @@ def hello_world():
 def purge():
 	collection.remove() #kill everything in the database
 	a = collection.find()
-	return "There are now %d records in the database" % a.count()
+
+	return "There are now %d records in the database." % a.count()
 
 @app.route('/count')
 def count():
 	a  = collection.find()
-	return "There are %d records in the database" % a.count()
+	ungranted = collection.find({"granted" : False}, {'_id':False})
+	granted = collection.find({"granted" : True}, {'_id':False})
+	return "There are %d records in the database.\n%d granted, %d ungranted" % (a.count(),granted.count(), ungranted.count())
 
 @app.route('/manage', methods=['POST', 'GET'])
 def manage():
