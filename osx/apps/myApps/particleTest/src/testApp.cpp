@@ -62,10 +62,23 @@ void testApp::setup(){
     
     text = result;
     recordCount = text.size();
+    
+    //-- SERIAL --//
+    serialVal = 0;
+    serial.enumerateDevices(); //depending on what is listed
+    serial.setup("tty.usbmodem1a21", 9600);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
+    //-- SERIAL --//
+    unsigned char bytesReturned[NUM_BYTES]; //an int is 4 bytes on osx
+    memset(bytesReturned, 0, NUM_BYTES); 
+    while(serial.readBytes(bytesReturned, NUM_BYTES) > 0){};
+    string serialData = (char*) bytesReturned; // cast to char  
+    serialVal = ofToInt(serialData);
+    cout << serialVal << endl;
+    
     if(blowingAway){
        for(int i= 0; i < PARTICLE_COUNT; i++){
             particles[i].blowAway(Force);
@@ -131,10 +144,12 @@ void testApp::keyPressed(int key){
         case(357):
             //up
             Force += 0.1;
+            //cout << "Force = " << Force << endl; //test seems like a value from 1-1.5 is desireable. Above that is ok.
             break;
         case(359):
             //down
             Force -= 0.1;
+            //cout << "Force = " << Force << endl;
             break;
         case(358):
             //right
