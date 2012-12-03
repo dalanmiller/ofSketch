@@ -2,6 +2,11 @@
 <html>
 <title>Dandelion Management</title>
 <body>
-<h1>{{names}}</h1>
+	<form method="post">
+	{% for w in wishes %}
+	<input type="checkbox" name="wish" value="{{w['id']}}">{{w['text']}}</input><br />
+	{% endfor %}
+	<input type="submit" value="Submit"/>
+	</form>
 </body>
 </html>

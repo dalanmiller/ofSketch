@@ -46,8 +46,8 @@ cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofM
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofPolyline.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofFbo.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofFbo.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofGLRenderer.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLRenderer.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofMaterial.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofMaterial.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofLight.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofLight.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofMaterial.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofMaterial.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofShader.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofShader.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofTexture.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofTexture.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/ofVbo.o /Users/steveminor/Documents/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofVbo.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
@@ -7293,7 +7293,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies11007c137264b641^957c7c137264b641^---0#1#0#--18"Check dependencies36"B663DE11-859F-40D0-8487-586082F95FAF-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesa704089ad76ab641^5ed86a9ad76ab641^---0#1#0#--18"Check dependencies36"1A8B0725-D06C-4163-BD84-8C5630B7A3B1-
 
 CCompileC ../../lib/osx/build/debug/openFrameworks.build/Objects-normal/i386/of3dUtils.o /Users/steveminor/Desktop/ofSketch/osx/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/of3dUtils.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 s373949857.195964

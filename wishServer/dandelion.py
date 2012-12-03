@@ -1,5 +1,5 @@
-import requests, pymongo, bson #alternative to urllib2
-from flask import Flask, jsonify
+import requests, pymongo
+from flask import Flask, jsonify, render_template, request
 import json 
 
 app = Flask(__name__)
@@ -37,20 +37,28 @@ def hello_world():
 def purge():
 	collection.remove() #kill everything in the database
 	a = collection.find()
-	return "There are now %d records in the database" % a.count()
+
+	return "There are now %d records in the database." % a.count()
 
 @app.route('/count')
 def count():
 	a  = collection.find()
-	return "There are %d records in the database" % a.count()
+	ungranted = collection.find({"granted" : False}, {'_id':False})
+	granted = collection.find({"granted" : True}, {'_id':False})
+	return "There are %d records in the database.\n%d granted, %d ungranted" % (a.count(),granted.count(), ungranted.count())
 
-@app.route('/manage')
+@app.route('/manage', methods=['POST', 'GET'])
 def manage():
-	#get all the records from the database where granted has been marked false
-	wishes = collection.find({"granted" : False}, {'_id':False})
-	wishes = [x for x in wishes] #iterate through cursor
-	names = ["Steve", "Hillary"]
-	return render_template('manage.html', names=names)
+	if request.method=='POST':
+		#remove the posted ids from the database
+		todelete = map(int,request.form.getlist("wish"))
+		collection.update({'id': {'$in': todelete}},{'$set':{'granted': True}}, multi=True)
+		return render_template('removed.html', todelete=todelete)
+	else:
+		#get all the records from the database where granted has been marked false
+		wishes = collection.find({"granted" : False}, {'_id':False})
+		wishes = [x for x in wishes] #iterate through cursor
+		return render_template('manage.html', wishes=wishes)
 
 
 @app.route('/blacklist')
