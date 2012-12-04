@@ -1,6 +1,7 @@
 #include "testApp.h"
 #include <math.h>
 #include <time.h>
+#include <string> //substr
 
 const int PARTICLE_COUNT = 555;
 Particle particles[PARTICLE_COUNT];
@@ -67,17 +68,45 @@ void testApp::setup(){
     serialVal = 0;
     serial.enumerateDevices(); //depending on what is listed
     serial.setup("tty.usbmodem1a21", 9600);
+    readSerialMessage = true;
+    countCycles = 0;
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
     //-- SERIAL --//
-    unsigned char bytesReturned[NUM_BYTES]; //an int is 4 bytes on osx
-    memset(bytesReturned, 0, NUM_BYTES); 
-    while(serial.readBytes(bytesReturned, NUM_BYTES) > 0){};
-    string serialData = (char*) bytesReturned; // cast to char  
-    serialVal = ofToInt(serialData);
-    cout << serialVal << endl;
+    if(readSerialMessage){
+        //send a handshake to the arduino serial
+        serial.writeByte('a');
+        if(serial.available() > 0){
+            //make sure there's something to write all the data to
+            unsigned char bytesReturned[NUM_BYTES];
+            memset(bytesReturned, 0, NUM_BYTES); //empty the variable?
+            
+            //serial.readBytes(bytesReturned, NUM_BYTES);
+            //keep reading bytes, until there's nothing left to read
+            while(serial.readBytes(bytesReturned, NUM_BYTES) > 0){};
+            string serialData = (char*) bytesReturned; // cast to string
+            serialVal = ofToInt(serialData);
+            cout << "Serial value  = " << serialVal << endl;
+        }
+        //serial.flush();
+    }
+    readSerialMessage = false;
+    countCycles++;
+    if(countCycles % 10 == 0){
+        readSerialMessage = true;
+    }
+    
+    /*
+    if(serialVal > 250){
+        Force = serialVal;
+        blowingAway = true;
+        comingBack = false;
+    }else{
+        comingBack = true;
+        blowingAway = false;
+    }*/
     
     if(blowingAway){
        for(int i= 0; i < PARTICLE_COUNT; i++){
@@ -106,6 +135,19 @@ void testApp::update(){
             //do something after 5 seconds have passed
         }
     }
+    
+    //-- Text --//
+    message = text[wishindex]["text"].asString();
+    if(message.length() > 70){
+		//if the lengrth is over this threshold, find the last punctuation mark or space
+        size_t mid_space = message.rfind(' ', 70);
+		//string substr ( size_t pos = 0, size_t n = npos ) const;
+		string temp = message.substr(0, mid_space);
+		message2 = message.substr(mid_space+1);
+        message = temp;
+	}else{
+        message2 = string(); //empty string
+    }
 }
 
 //--------------------------------------------------------------
@@ -125,8 +167,12 @@ void testApp::draw(){
     
     //-- Text --//
     ofSetHexColor(0xFFFFFF);
-    string message = text[wishindex]["text"].asString();
-    futuraMedium.drawString(message, 10, 40);
+    if(message2.empty()){
+        futuraMedium.drawString(message, 10, 40);
+    }else{
+        futuraMedium.drawString(message, 10, 40);
+        futuraMedium.drawString(message2, 10, 65);
+    }
 }
 
 //--------------------------------------------------------------

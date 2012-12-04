@@ -4,7 +4,7 @@
 #include "particle.h"
 #include "ofxJSONElement.h"
 
-#define NUM_BYTES 4
+#define NUM_BYTES 6
 
 class testApp : public ofBaseApp{
 
@@ -20,6 +20,10 @@ class testApp : public ofBaseApp{
         bool incremented;
         ofSerial serial;
         int serialVal;
+        bool readSerialMessage;
+        int countCycles;
+        string message;
+        string message2;
 
 		void keyPressed  (int key);
 		void keyReleased(int key);

@@ -13,15 +13,15 @@ collection = db.dandelion #set the collection
 "routing"
 @app.route('/<search_string>')
 def index(search_string):
-	url_query = "http://search.twitter.com/search.json?q={0}".format(search_string) # search for "I wish"
-	r = requests.get(url_query)
+	#url_query = "http://search.twitter.com/search.json?q={0}".format(search_string) # search for "I wish"
+	#r = requests.get(url_query)
 
-	if(r.status_code == 200):
-		for tweet in r.json["results"]:
-			#save the record in the database if no result is returned
-			if collection.find_one({'id' : tweet["id"]}) is None:
-				tweet["granted"] = False; #add a wishGranted parameter
-				collection.insert(tweet)
+	#if(r.status_code == 200):
+	#	for tweet in r.json["results"]:
+	#		#save the record in the database if no result is returned
+	#		if collection.find_one({'id' : tweet["id"]}) is None:
+	#			tweet["granted"] = False; #add a wishGranted parameter
+	#			collection.insert(tweet)
 	#return everthing in the database where granted = false;
 	wishes = collection.find({"granted" : False}, {'_id':False})
 	wishes = [x for x in wishes] #still must iterate through cursor
